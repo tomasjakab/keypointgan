@@ -1,0 +1,46 @@
+# paths
+dataroot: ./datasets/simple_human36m/human_images
+perceptual_net: ./networks/imagenet-vgg-verydeep-19.mat
+checkpoints_dir: ./checkpoints
+nets_paths: [regressor, ./checkpoints/simple_human36m_regressor/580000_net_regressor.pth]
+
+# for testing
+nets_paths: [offline_regressor, ./checkpoints/simple_human36m_regressor/580000_net_regressor.pth]
+
+
+# experiment name
+name: simple_human36m
+
+
+model: keypoint_gan
+display_id: -1
+dataset_mode: simplehuman36m
+resize_or_crop: scale_width
+no_flip: True
+display_freq: 10
+multi_ganA: True
+print_freq: 10
+loadSize: 128
+fineSize: 128
+output_nc: 1
+cycle_loss: perceptual
+netG_A: skip_nips
+netG_B: nips
+netDA: basic
+batch_size: 16
+num_threads: 16
+save_latest_freq: 5000
+save_iters_freq: 5000
+clip_grad: 1.0
+lambda_gan_A: 10.0
+skeleton_type: human36m_simple2
+paired_skeleton_type: human36m_simple2
+prior_skeleton_type: human36m_simple2
+
+sample_window: [0, 1000]
+
+finetune_regressor: True
+regressor_real_loss: 0.9
+regressor_fake_loss: 0.1
+
+sigma: 0.2

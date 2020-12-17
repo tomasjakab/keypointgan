@@ -1,0 +1,23 @@
+# paths
+results_dir: ./results
+
+phase: test
+
+shuffle: false
+no_flip: True
+display_id: -1
+print_freq: 5
+
+eval: True
+
+num_threads: 16
+batch_size: 64
+sample_window: [0, 1] # the second parameter is sampling frequency
+
+used_points: all
+error_form: image_size
+
+num_test_save: 60
+skeleton_subset_size: 0
+
+offline_regressor: True
